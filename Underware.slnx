@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="Underware.vcxproj" Id="b3d559d4-5f74-4416-a22e-573e33993ad0" />
+</Solution>
