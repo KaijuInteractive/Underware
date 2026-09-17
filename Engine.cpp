@@ -1,11 +1,23 @@
 #include "Engine.h"
 
-Engine::Engine(int width, int height, const std::string& title)
+// =================================================
+// CONSTRUCTOR
+// =================================================
+
+Engine::Engine(
+    int width,
+    int height,
+    const std::string& title
+)
 {
     screenWidth = width;
     screenHeight = height;
     windowTitle = title;
 }
+
+// =================================================
+// INITIALIZE
+// =================================================
 
 void Engine::Initialize()
 {
@@ -17,6 +29,10 @@ void Engine::Initialize()
 
     SetTargetFPS(60);
 }
+
+// =================================================
+// RUN
+// =================================================
 
 void Engine::Run()
 {
@@ -31,10 +47,29 @@ void Engine::Run()
     Shutdown();
 }
 
+// =================================================
+// UPDATE
+// =================================================
+
 void Engine::Update()
 {
-    player.Update(screenWidth, screenHeight);
+    // -------------------------------------------------
+    // PLAYER
+    // -------------------------------------------------
+
+    player.Update(
+        screenWidth,
+        screenHeight
+    );
+
+    // testEntity does not update yet.
+    // For now, it exists only to prove that Entity
+    // can be reused for multiple independent objects.
 }
+
+// =================================================
+// DRAW
+// =================================================
 
 void Engine::Draw()
 {
@@ -42,7 +77,16 @@ void Engine::Draw()
 
     ClearBackground(BLACK);
 
+    // -------------------------------------------------
+    // ENTITIES
+    // -------------------------------------------------
+
     player.Draw();
+    testEntity.Draw();
+
+    // -------------------------------------------------
+    // ENGINE INFO
+    // -------------------------------------------------
 
     DrawText(
         "UNDERWARE ENGINE",
@@ -68,13 +112,41 @@ void Engine::Draw()
         GREEN
     );
 
+    // -------------------------------------------------
+    // ENTITY TEST
+    // -------------------------------------------------
+
+    DrawText(
+        "Reusable Entity Test: ONLINE",
+        270,
+        310,
+        16,
+        GREEN
+    );
+
+    DrawText(
+        "Arrow Keys - Move Teal Entity",
+        265,
+        350,
+        16,
+        LIGHTGRAY
+    );
+
     EndDrawing();
 }
+
+// =================================================
+// SHUTDOWN
+// =================================================
 
 void Engine::Shutdown()
 {
     CloseWindow();
 }
+
+// =================================================
+// INPUT
+// =================================================
 
 bool Engine::IsKeyPressedEngine(int key)
 {
