@@ -10,6 +10,8 @@ The project is an ongoing exploration of game-engine architecture, reusable enti
 >
 > Underware is an early-stage learning project and is actively being developed.
 
+![Underware Engine v0.0.2 demonstrating reusable entities](underware-engine-v0.0.2.png)
+
 ## 🎮 Current Features
 
 - Engine-managed application lifecycle
